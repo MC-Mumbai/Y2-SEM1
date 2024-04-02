@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="7.0.0-rc4" timestamp="2024-04-02T10:16:56.950">
+<file name="/mnt/c/Users/bhuva/Desktop/worksheet0_pmd_demo_java/src/main/java/edu/curtin/awful/Awful.java">
+<violation beginline="17" endline="17" begincolumn="29" endcolumn="69" rule="FieldNamingConventions" ruleset="Code Style" package="edu.curtin.awful" class="Awful" variable="constant_not_following_naming_convention" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#fieldnamingconventions" priority="1">
+The public constant name 'constant_not_following_naming_convention' doesn't match '[A-Z][A-Z_0-9]*'
+</violation>
+<violation beginline="18" endline="18" begincolumn="16" endcolumn="38" rule="CommentDefaultAccessModifier" ruleset="Code Style" package="edu.curtin.awful" class="Awful" variable="fieldWithDefaultAccess" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#commentdefaultaccessmodifier" priority="3">
+Write 'private', 'protected' or 'public', unless you _really intend_ to use default package-private access, in which case you should write '/* default */'.
+</violation>
+<violation beginline="25" endline="25" begincolumn="25" endcolumn="31" rule="CloseResource" ruleset="Error Prone" package="edu.curtin.awful" class="Awful" method="main" variable="writer" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this PrintWriter object are closed after use
+</violation>
+<violation beginline="33" endline="33" begincolumn="15" endcolumn="24" rule="AvoidCatchingGenericException" ruleset="Design" package="edu.curtin.awful" class="Awful" method="main" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+<violation beginline="35" endline="35" begincolumn="13" endcolumn="32" rule="AvoidPrintStackTrace" ruleset="Best Practices" package="edu.curtin.awful" class="Awful" method="main" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#avoidprintstacktrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+</file>
+</pmd>
