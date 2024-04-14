@@ -1,24 +1,18 @@
 package edu.curtin.app;
 
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 public class App {
-
-    // Class to manage WBS and perform operations
-    static class WorkBreakdownSystem {
-        private Task rootTask;
-
-        // Constructor
-        public WorkBreakdownSystem() {
-            this.rootTask = new Task("", "Root", 0);
-        }
-    }
     
     public static void main(String[] args) {
-        Task rootTask = new Task("", "Root", 0);
+        
 
-        // Load data from file
+        Map<String, Task> taskMap = new HashMap<>(); // Create a map to hold tasks
+
+        // Load data from file and populate the task map
         if (args.length > 0) {
-            WBSLoader.loadWBSFromFile(args[0], rootTask);
+            WBSLoader.loadWBSFromFile(args[0], taskMap);
         } else {
             System.out.println("No filename provided.");
             return;
@@ -28,6 +22,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         while (!quit) {
+            
             System.out.println("Menu:");
             System.out.println("1. Estimate effort");
             System.out.println("2. Configure");
@@ -39,17 +34,22 @@ public class App {
             switch (choice) {
                 case 1:
                     // Display WBS and effort summary
-                    WBSDisplayer.displayWBS(rootTask);
-                    WBSDisplayer.estimateEffort(rootTask);
+                    //WBSDisplayer.displayWBS(rootTask);
+                    
                     break;
                 case 2:
                     // Configure settings
-                    WBSConfigurator.configureSettings(rootTask);
+                    //WBSConfigurator.configureSettings(rootTask);
                     break;
                 case 3:
                     // Save data to file before quitting
-                    WBSSaver.saveWBSToFile(args[0], rootTask);
+                    //WBSSaver.saveWBSToFile(args[0], rootTask);
                     quit = true;
+                    break;
+                case 4:
+                    // Display task and subtasks
+                    WBSDisplayer.displayTaskAndSubtasks(taskMap);
+                    WBSConfigurator.displayEffortSummary(taskMap);
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");

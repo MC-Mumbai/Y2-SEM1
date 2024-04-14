@@ -1,83 +1,51 @@
 package edu.curtin.app;
 
+import java.util.Scanner;
+
+import java.util.Map;
+
 public class WBSDisplayer {
-    // Method to display WBS and effort summary
-    public static void displayWBS(Task rootTask) {
-        // Display the WBS recursively
-        System.out.println("Work Breakdown Structure:");
-        displayTask(rootTask, 0);
+    private static Scanner scanner = new Scanner(System.in);
 
-        // Calculate and display effort summary
-        int totalKnownEffort = calculateTotalKnownEffort(rootTask);
-        int unknownTasksCount = countUnknownTasks(rootTask);
-        System.out.println("Total known effort = " + totalKnownEffort);
-        System.out.println("Unknown tasks = " + unknownTasksCount);
+    // Method to find a task by its ID
+    public static Task findTaskById(Map<String, Task> taskMap, String taskId) {
+        return taskMap.get(taskId);
     }
 
-    // Recursive method to display tasks and their subtasks with proper indentation
-    private static void displayTask(Task task, int depth) {
-        // Display task details
-        if (!task.getId().isEmpty()) {
-            // Indent based on the depth
-            for (int i = 0; i < depth; i++) {
-                System.out.print("  ");
-            }
-            System.out.println(task.getId() + ": " + task.getDescription() + ", effort = " + task.getEffortEstimate());
+    // Method to check if a task with a given ID exists in the map
+    public static boolean containsTask(Map<String, Task> taskMap, String taskId) {
+        return taskMap.containsKey(taskId);
+    }
+
+    // Method to display task details
+    public static void displayTask(Task task) {
+        if (task != null) {
+            System.out.println("Task: " + task.getDescription() + ", Effort Estimate: " + task.getEffortEstimate());
         } else {
-            // For root task, no indentation needed
-            System.out.println("Root: " + task.getDescription() + ", effort = " + task.getEffortEstimate());
-        }
-
-        // Display subtasks recursively
-        for (Task subTask : task.getSubTasks()) {
-            displayTask(subTask, depth + 1);
+            System.out.println("Task not found.");
         }
     }
 
-    // Method to calculate total known effort
-    private static int calculateTotalKnownEffort(Task task) {
-        int totalEffort = task.getEffortEstimate();
+    // Method to display task and its subtasks in the specified format
+    private static void displayTaskAndSubtasksRecursive(Task task, String prefix) {
+        // Display task details with prefix
+        System.out.println(prefix + task.getId() + ": " + task.getDescription() + ", effort = " + task.getEffortEstimate());
 
-        // Calculate effort for subtasks recursively
+        // Display subtasks recursively with an increased indent
+        String subtaskPrefix = prefix + "  ";
         for (Task subTask : task.getSubTasks()) {
-            totalEffort += calculateTotalKnownEffort(subTask);
+            displayTaskAndSubtasksRecursive(subTask, subtaskPrefix); 
         }
-
-        return totalEffort;
     }
 
-    // Method to count unknown tasks
-    private static int countUnknownTasks(Task task) {
-        int count = 0;
-
-        // Check if the task has subtasks and effort estimate
-        if (task.getSubTasks().isEmpty() && task.getEffortEstimate() == 0) {
-            count++;
+    // Method to display task and its subtasks
+    public static void displayTaskAndSubtasks(Map<String, Task> taskMap) {
+        // Display root tasks and their subtasks
+        for (Map.Entry<String, Task> entry : taskMap.entrySet()) {
+            Task task = entry.getValue();
+            if (task.getParentTaskID() == null) {
+                displayTaskAndSubtasksRecursive(task, "");
+            }
         }
-
-        // Count unknown tasks for subtasks recursively
-        for (Task subTask : task.getSubTasks()) {
-            count += countUnknownTasks(subTask);
-        }
-
-        return count;
-    }
-
-    // Method to estimate effort
-    public static void estimateEffort(Task rootTask) {
-        int totalEffort = calculateTotalEffort(rootTask);
-        System.out.println("Total Effort Estimate: " + totalEffort);
-    }
-
-    // Recursive method to calculate total effort
-    private static int calculateTotalEffort(Task task) {
-        int totalEffort = task.getEffortEstimate();
-
-        // Calculate effort for subtasks recursively
-        for (Task subTask : task.getSubTasks()) {
-            totalEffort += calculateTotalEffort(subTask);
-        }
-
-        return totalEffort;
     }
 }

@@ -1,38 +1,41 @@
 package edu.curtin.app;
 
-import java.util.Scanner;
+import java.util.List;
+import java.util.Map;
 
 public class WBSConfigurator {
-    // Method to configure settings
-    public static void configureSettings(Task rootTask) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the ID of the task to configure: ");
-        String taskId = scanner.nextLine();
-
-        Task task = findTaskById(rootTask, taskId);
-        if (task != null) {
-            System.out.print("Enter the new effort estimate for task " + taskId + ": ");
-            int newEffortEstimate = scanner.nextInt();
-            task.setEffortEstimate(newEffortEstimate);
-            System.out.println("Effort estimate for task " + taskId + " updated successfully.");
-        } else {
-            System.out.println("Task with ID " + taskId + " not found.");
-        }
-        
+    // Method to display effort summary
+    public static void displayEffortSummary(Map<String, Task> taskMap) {
+        // Calculate and display total known effort
+        int totalKnownEffort = calculateTotalKnownEffort(taskMap);
+        int unknownTasksCount = countUnknownTasks(taskMap);
+        System.out.println("Total known effort = " + totalKnownEffort);
+        System.out.println("Unknown tasks = " + unknownTasksCount);
     }
 
-    // Helper method to find a task by its ID
-    private static Task findTaskById(Task task, String taskId) {
-        if (task.getId().equals(taskId)) {
-            return task;
+    // Method to calculate total known effort
+    private static int calculateTotalKnownEffort(Map<String, Task> taskMap) {
+        int totalEffort = 0;
+
+        // Calculate effort for all tasks in the map
+        for (Task task : taskMap.values()) {
+            totalEffort += task.getEffortEstimate();
         }
-        for (Task subTask : task.getSubTasks()) {
-            Task foundTask = findTaskById(subTask, taskId);
-            if (foundTask != null) {
-                return foundTask;
+
+        return totalEffort;
+    }
+
+    // Method to count unknown tasks
+    private static int countUnknownTasks(Map<String, Task> taskMap) {
+        int count = 0;
+
+        // Count tasks without subtasks and without effort estimates
+        for (Task task : taskMap.values()) {
+            if (task.getSubTasks().isEmpty() && task.getEffortEstimate() == 0) {
+                count++;
             }
         }
-        return null;
+
+        return count;
     }
-    
 }

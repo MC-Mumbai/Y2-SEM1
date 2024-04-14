@@ -3,9 +3,10 @@ package edu.curtin.app;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Map;
 
 public class WBSLoader {
-    public static void loadWBSFromFile(String filename, Task rootTask) {
+    public static void loadWBSFromFile(String filename, Map<String, Task> taskMap) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -18,56 +19,31 @@ public class WBSLoader {
                 }
 
                 // Extract information from the parts and create a Task object
-                String parentId = null;
+                String parentId = parts.length > 4 ? parts[0] : parts[0].isEmpty() ? null : parts[0];
                 String id = parts[1]; // Task id
                 String description = parts[2]; // Task description
-                int effortEstimate = 0; // Default effort estimate
+                int effortEstimate = parts.length > 3 ? Integer.parseInt(parts[3]) : 0; // Effort estimate
 
-                if (parts.length > 3) {
-                    try {
-                        effortEstimate = Integer.parseInt(parts[3]); // Effort estimate
-                    } catch (NumberFormatException e) {
-                        System.out.println("Invalid effort estimate: " + parts[3]);
-                    }
-                }
-
-                if (parts.length > 4) {
-                    parentId = parts[0]; // Parent id
-                }
-
-                Task task = new Task(id, description, effortEstimate);
+                Task task = new Task(id, description, effortEstimate, parentId);
+                task.setParentTaskID(parentId); // Set the parent task ID
 
                 // Add the created Task object to the appropriate location in the WBS hierarchy
-                // If parentId is null, assume it's a direct child of the root task
-                if (parentId == null) {
-                    rootTask.addSubTask(task);
-                } else {
+                if (parentId != null) {
                     // Find the parent task and add this task as its subtask
-                    Task parentTask = findTask(rootTask, parentId);
+                    Task parentTask = taskMap.get(parentId);
                     if (parentTask != null) {
                         parentTask.addSubTask(task);
                     } else {
                         System.out.println("Parent task not found for task " + id);
                     }
                 }
+
+                // Add the task to the map
+                taskMap.put(id, task);
             }
             System.out.println("WBS loaded successfully.");
         } catch (IOException | NumberFormatException e) {
             System.out.println("Error loading WBS from file: " + e.getMessage());
         }
-    }
-
-    // Helper method to find a task by its id recursively
-    private static Task findTask(Task task, String id) {
-        if (task.getId().equals(id)) {
-            return task;
-        }
-        for (Task subTask : task.getSubTasks()) {
-            Task found = findTask(subTask, id);
-            if (found != null) {
-                return found;
-            }
-        }
-        return null;
     }
 }
