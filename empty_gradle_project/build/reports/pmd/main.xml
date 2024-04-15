@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="7.0.0-rc4" timestamp="2024-04-15T11:36:11.231">
+<file name="C:\Users\Bhuvan\Desktop\Y2-SEM1\empty_gradle_project\src\main\java\edu\curtin\app\WBSConfigurator.java">
+<violation beginline="22" endline="30" begincolumn="13" endcolumn="14" rule="ConfusingTernary" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="estimateEffort" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="56" endline="90" begincolumn="9" endcolumn="10" rule="ConfusingTernary" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="estimateSubtaskEffort" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="206" endline="206" begincolumn="17" endcolumn="32" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="configureOptions" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary qualifier 'WBSConfigurator': 'setReconciliationApproach' is already in scope
+</violation>
+<violation beginline="209" endline="209" begincolumn="17" endcolumn="32" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="configureOptions" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary qualifier 'WBSConfigurator': 'setReconciliationApproach' is already in scope
+</violation>
+<violation beginline="212" endline="212" begincolumn="17" endcolumn="32" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="configureOptions" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary qualifier 'WBSConfigurator': 'setReconciliationApproach' is already in scope
+</violation>
+<violation beginline="219" endline="219" begincolumn="9" endcolumn="24" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="edu.curtin.app" class="WBSConfigurator" method="configureOptions" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary qualifier 'WBSConfigurator': 'setDefaultNumberOfEstimates' is already in scope
+</violation>
+</file>
+<file name="C:\Users\Bhuvan\Desktop\Y2-SEM1\empty_gradle_project\src\main\java\edu\curtin\app\WBSDisplayer.java">
+<violation beginline="8" endline="8" begincolumn="28" endcolumn="35" rule="UnusedPrivateField" ruleset="Best Practices" package="edu.curtin.app" class="WBSDisplayer" variable="scanner" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'scanner'.
+</violation>
+</file>
+<file name="C:\Users\Bhuvan\Desktop\Y2-SEM1\empty_gradle_project\src\main\java\edu\curtin\app\WBSSaver.java">
+<violation beginline="19" endline="19" begincolumn="75" endcolumn="81" rule="UnusedFormalParameter" ruleset="Best Practices" package="edu.curtin.app" class="WBSSaver" method="saveTask" variable="prefix" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'prefix'.
+</violation>
+</file>
+</pmd>
