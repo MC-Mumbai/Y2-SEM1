@@ -21,28 +21,34 @@ public class WBSConfigurator {
             // If the task has subtasks, estimate effort for each subtask
             if (!task.getSubTasks().isEmpty()) {
                 for (Task subTask : task.getSubTasks()) {
-                    estimateSubtaskEffort(subTask);
+                    estimateSubtaskEffort(subTask, taskMap);
+    
                 }
             } else {
                 // If the task has no subtasks, estimate effort for the task itself
-                estimateSubtaskEffort(task);
+                estimateSubtaskEffort(task, taskMap);
             }
         } else {
             System.out.println("Task with ID " + taskId + " not found.");
         }
     }
 
-    private static void estimateSubtaskEffort(Task task) {
+    private static void estimateSubtaskEffort(Task task, Map<String, Task> taskMap) {
         // Ask for separate effort estimates
         System.out.print("Enter separate effort estimates for task " + task.getId() + ": ");
-        String[] estimates = scanner.nextLine().split(" ");
-
-        // Ensure the number of estimates matches the default number
-        while (estimates.length != defaultNumberOfEstimates) {
-            System.out.println("Invalid number of estimates. Please enter " + defaultNumberOfEstimates + " estimates:");
-            String input = scanner.nextLine();
-            estimates = input.split(" ");
+        int[] estimates = new int[defaultNumberOfEstimates];
+        for (int i = 0; i < defaultNumberOfEstimates; i++) {
+            estimates[i] = scanner.nextInt();
         }
+        scanner.nextLine(); // Consume newline
+
+        // Check if the number of entered estimates matches the default number
+        if (estimates.length != defaultNumberOfEstimates) {
+            System.out.println("Invalid number of estimates. Please enter " + defaultNumberOfEstimates + " estimates.");
+            return;
+        }
+
+        int newEffort = 0;
 
         // Check if all estimates are the same
         boolean allSame = areAllSame(estimates);
@@ -55,26 +61,32 @@ public class WBSConfigurator {
             System.out.println("3. Use Default Approach");
 
             // Get the user's choice
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
             // Perform reconciliation based on the user's choice
             switch (choice) {
                 case 1:
                     reconcileTakeHighest(estimates);
+                    newEffort = estimates[0];
                     break;
                 case 2:
                     reconcileTakeMedian(estimates);
+                    newEffort = estimates[0];
                     break;
                 case 3:
                     reconcileEffortEstimates(estimates);
+                    newEffort = estimates[0];
                     break;
                 default:
                     System.out.println("Invalid choice. Using default reconciliation approach.");
                     reconcileEffortEstimates(estimates); // Use default reconciliation approach
+                    newEffort = estimates[0];
                     break;
             }
         } else {
             System.out.println("All estimates are the same: " + estimates[0]);
+            newEffort = estimates[0];
         }
 
         // Display separate effort estimates
@@ -84,11 +96,13 @@ public class WBSConfigurator {
         }
 
         // Record the new effort estimate within the WBS
-        // (Implementation of reconciliation and recording to be done)
+        WBSEffortUpdater.recordNewEffort(taskMap, task.getId(), newEffort);
+
+        
     }
 
     
-    private static void reconcileEffortEstimates(String[] estimates) {
+    private static void reconcileEffortEstimates(int[] estimates) {
         // Implement default reconciliation approach here
         // Use defaultReconciliationApproach to determine the approach
         
@@ -110,31 +124,30 @@ public class WBSConfigurator {
     
 
     // Helper method to reconcile differing estimates by taking the highest estimate
-    private static void reconcileTakeHighest(String[] estimates) {
+    private static void reconcileTakeHighest(int[] estimates) {
         int highest = Integer.MIN_VALUE;
-        for (String estimate : estimates) {
-            int value = Integer.parseInt(estimate);
-            if (value > highest) {
-                highest = value;
+        for (int estimate : estimates) {
+            if (estimate > highest) {
+                highest = estimate;
             }
         }
         System.out.println("Reconciled estimate: " + highest);
     }
     
     // Helper method to reconcile differing estimates by taking the median estimate
-    private static void reconcileTakeMedian(String[] estimates) {
-        int[] sortedEstimates = Arrays.stream(estimates).mapToInt(Integer::parseInt).sorted().toArray();
+    private static void reconcileTakeMedian(int[] estimates) {
+        Arrays.sort(estimates);
         int median;
-        if (sortedEstimates.length % 2 == 0) {
-            median = (sortedEstimates[sortedEstimates.length / 2 - 1] + sortedEstimates[sortedEstimates.length / 2]) / 2;
+        if (estimates.length % 2 == 0) {
+            median = (estimates[estimates.length / 2 - 1] + estimates[estimates.length / 2]) / 2;
         } else {
-            median = sortedEstimates[sortedEstimates.length / 2];
+            median = estimates[estimates.length / 2];
         }
         System.out.println("Reconciled estimate: " + median);
     }
 
     // Reconciliation approach: Request a single revised estimate
-    private static void reconcileRequestRevised(String[] estimates) {
+    private static void reconcileRequestRevised(int[] estimates) {
         // Print the original estimates for reference
         System.out.println("Original Estimates:");
         for (int i = 0; i < estimates.length; i++) {
@@ -153,14 +166,14 @@ public class WBSConfigurator {
         }
         
         // Set the chosen estimate as the new estimate
-        String revisedEstimate = estimates[chosenIndex];
+        int revisedEstimate = estimates[chosenIndex];
         System.out.println("Revised Estimate: " + revisedEstimate);
     }
     
-    private static boolean areAllSame(String[] estimates) {
+    private static boolean areAllSame(int[] estimates) {
         // Check if all elements in the array are the same
         for (int i = 1; i < estimates.length; i++) {
-            if (!estimates[i].equals(estimates[0])) {
+            if (estimates[i] != estimates[0]) {
                 return false;
             }
         }

@@ -46,7 +46,7 @@ public class App {
                     break;
                 case 3:
                     // Save data to file before quitting
-                    WBSSaver.saveWBSToFile(taskMap, "test.txt");
+                    //WBSSaver.saveWBSToFile(taskMap, "test.txt");
                     quit = true;
                     break;
                 case 4:
