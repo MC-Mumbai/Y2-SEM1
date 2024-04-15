@@ -22,6 +22,9 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         while (!quit) {
+
+            WBSDisplayer.displayTaskAndSubtasks(taskMap);
+            WBSDisplayer.displayEffortSummary(taskMap);
             
             System.out.println("Menu:");
             System.out.println("1. Estimate effort");
@@ -34,22 +37,22 @@ public class App {
             switch (choice) {
                 case 1:
                     // Display WBS and effort summary
-                    //WBSDisplayer.displayWBS(rootTask);
+                    WBSConfigurator.estimateEffort(taskMap);
                     
                     break;
                 case 2:
                     // Configure settings
-                    //WBSConfigurator.configureSettings(rootTask);
+                    WBSConfigurator.configureOptions();
                     break;
                 case 3:
                     // Save data to file before quitting
-                    //WBSSaver.saveWBSToFile(args[0], rootTask);
+                    WBSSaver.saveWBSToFile(taskMap, "test.txt");
                     quit = true;
                     break;
                 case 4:
                     // Display task and subtasks
                     WBSDisplayer.displayTaskAndSubtasks(taskMap);
-                    WBSConfigurator.displayEffortSummary(taskMap);
+                    WBSDisplayer.displayEffortSummary(taskMap);
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
