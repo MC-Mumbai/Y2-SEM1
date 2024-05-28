@@ -1,0 +1,66 @@
+DELIVERY
+PURCHASE-ONLINE antw@acaduv.fev
+DROP-OFF ykqhu@zgop.lzf
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-ONLINE fwftpad@gllqgh.evd
+PURCHASE-ONLINE xafj@izti.bcz
+PURCHASE-IN-STORE
+PURCHASE-ONLINE guifrf@fbwib.fpq
+Day: 1
+Cash: 17100
+Available Bikes: 53
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 4
+PURCHASE-IN-STORE
+DROP-OFF agf@dtmsyct.epv
+DROP-OFF vtrrj@mxtu.vrb
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+Day: 2
+Cash: 20300
+Available Bikes: 50
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 4
+PURCHASE-ONLINE neshpa@akmg.yot
+PURCHASE-IN-STORE
+Day: 3
+Cash: 22300
+Available Bikes: 48
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 5
+Day: 4
+Cash: 22300
+Available Bikes: 48
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 5
+'qzi^NFN@KFF4HMh7A!mm`**[/c
+PICK-UP xafj@izti.bcz
+PICK-UP agf@dtmsyct.epv
+Day: 5
+Cash: 22300
+Available Bikes: 48
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 3
+PICK-UP guifrf@fbwib.fpq
+PICK-UP ykqhu@zgop.lzf
+Day: 6
+Cash: 22300
+Available Bikes: 48
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 1
+PURCHASE-ONLINE ttltym@qnlz.nhw
+Day: 7
+Cash: 23300
+Available Bikes: 47
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 2
+DROP-OFF hzg@qkyd.ovl
+PURCHASE-ONLINE edk@uwv.ews
+Day: 8
+Cash: 23400
+Available Bikes: 46
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 3
+Total messages: 24
+Total failures: 1

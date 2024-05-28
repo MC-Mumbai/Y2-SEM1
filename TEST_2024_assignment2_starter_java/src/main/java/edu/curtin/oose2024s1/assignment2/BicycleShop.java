@@ -23,7 +23,7 @@ public class BicycleShop implements Subject {
 
     private void initialiseBikes() {
         for (int i = 0; i < 50; i++) {
-            bicycles.add(new Bike(new AvailableState()));
+            bicycles.add(Factory.createBike(new AvailableState()));
         }
     }
 
@@ -106,8 +106,7 @@ public class BicycleShop implements Subject {
 
     @Override
     public void notifyObservers(String message) {
-        for (int i = 0; i < observers.size(); i++) {
-            Observer observer = observers.get(i);
+        for (Observer observer : observers) {
             observer.update(message);
         }
     }

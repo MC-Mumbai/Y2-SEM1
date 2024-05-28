@@ -4,23 +4,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Simulation {
     private BicycleShop shop;
     private BikeShopInput input;
-    private PrintWriter writer;
     private EmployeeSalary employeeSalary;
+    private static final Logger LOGGER = Logger.getLogger(Simulation.class.getName());
 
     public Simulation(BicycleShop shop, BikeShopInput input) {
         this.shop = shop;
         this.input = input;
         this.employeeSalary = new EmployeeSalary(shop); // Initialize EmployeeSalary
-
-        try {
-            writer = new PrintWriter(new FileWriter("sim_results.txt", true));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public BicycleShop getShop() {
@@ -64,12 +60,7 @@ public class Simulation {
             // Final statistics
             displayFinalStatistics(totalMessages, totalFailures);
         } catch (InterruptedException | IOException e) {
-            e.printStackTrace();
-        } finally {
-            // Ensure the writer is closed to flush all the data
-            if (writer != null) {
-                writer.close();
-            }
+            LOGGER.log(Level.SEVERE, "Exception occurred during the simulation", e);
         }
     }
 
@@ -89,8 +80,13 @@ public class Simulation {
     }
 
     private void logMessage(String message) {
-        writer.println(message);
-        writer.flush(); // Ensure the message is actually written to the file
+        // Use try-with-resources to ensure the PrintWriter is closed after use
+        try (PrintWriter writer = new PrintWriter(new FileWriter("sim_results.txt", true))) {
+            writer.println(message);
+            writer.flush(); // Ensure the message is actually written to the file
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Failed to write message to file", e);
+        }
     }
 
     public void displayDailyStatistics(int daysElapsed) {
