@@ -61,9 +61,6 @@ public class BicycleShop implements Subject {
 
     public void addBike(Bike bike) {
         bicycles.add(bike);
-        if (bike.getState() instanceof BeingServicedState) {
-            bikesBeingServiced++;
-        }
     }
 
     public void removeBike(Bike bike) {

@@ -65,6 +65,11 @@ public class Simulation {
             displayFinalStatistics(totalMessages, totalFailures);
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
+        } finally {
+            // Ensure the writer is closed to flush all the data
+            if (writer != null) {
+                writer.close();
+            }
         }
     }
 
@@ -85,19 +90,23 @@ public class Simulation {
 
     private void logMessage(String message) {
         writer.println(message);
-        writer.flush();
+        writer.flush(); // Ensure the message is actually written to the file
     }
 
     public void displayDailyStatistics(int daysElapsed) {
-        System.out.println("Day: " + daysElapsed);
-        System.out.println("Cash: " + shop.getCash());
-        System.out.println("Available Bikes: " + shop.getAvailableBikes());
-        System.out.println("Bikes Being Serviced: " + shop.getBikesBeingServiced());
-        System.out.println("Bikes Awaiting Pickup: " + shop.getBikesAwaitingPickup());
+        String stats = "Day: " + daysElapsed + "\n" +
+                       "Cash: " + shop.getCash() + "\n" +
+                       "Available Bikes: " + shop.getAvailableBikes() + "\n" +
+                       "Bikes Being Serviced: " + shop.getBikesBeingServiced() + "\n" +
+                       "Bikes Awaiting Pickup: " + shop.getBikesAwaitingPickup();
+        System.out.println(stats);
+        logMessage(stats); // Log the daily statistics
     }
 
     public void displayFinalStatistics(int totalMessages, int totalFailures) {
-        System.out.println("Total messages: " + totalMessages);
-        System.out.println("Total failures: " + totalFailures);
+        String finalStats = "Total messages: " + totalMessages + "\n" +
+                            "Total failures: " + totalFailures;
+        System.out.println(finalStats);
+        logMessage(finalStats); // Log the final statistics
     }
 }
