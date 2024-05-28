@@ -15,6 +15,7 @@ public class DropOffEvent implements Event {
             bike.setServiceStartTime(System.currentTimeMillis()); // Set the service start time
             shop.addBike(bike);
             shop.setBikesBeingServiced(shop.getBikesBeingServiced() + 1);
+            shop.setCash(shop.getCash() + 100);
             System.out.println("Drop-off accepted: Bike is being serviced.");
         } else {
             System.out.println("FAILURE: Not enough space for drop-off.");
