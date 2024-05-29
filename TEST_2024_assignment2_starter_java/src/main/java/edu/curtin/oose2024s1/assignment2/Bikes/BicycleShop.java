@@ -1,14 +1,14 @@
-package edu.curtin.oose2024s1.assignment2.Bikes;
+package edu.curtin.oose2024s1.assignment2.bikes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.curtin.oose2024s1.assignment2.O.F.Factory;
-import edu.curtin.oose2024s1.assignment2.O.F.Observer;
-import edu.curtin.oose2024s1.assignment2.O.F.Subject;
-import edu.curtin.oose2024s1.assignment2.States.AvailableState;
-import edu.curtin.oose2024s1.assignment2.States.AwaitingPickupState;
-import edu.curtin.oose2024s1.assignment2.States.BeingServicedState;
+import edu.curtin.oose2024s1.assignment2.o_f.Factory;
+import edu.curtin.oose2024s1.assignment2.o_f.Observer;
+import edu.curtin.oose2024s1.assignment2.o_f.Subject;
+import edu.curtin.oose2024s1.assignment2.states.AvailableState;
+import edu.curtin.oose2024s1.assignment2.states.AwaitingPickupState;
+import edu.curtin.oose2024s1.assignment2.states.BeingServicedState;
 
 public class BicycleShop implements Subject {
     private int cash;

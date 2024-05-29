@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
-import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
-import edu.curtin.oose2024s1.assignment2.Events.Event;
-import edu.curtin.oose2024s1.assignment2.O.F.Factory;
+import edu.curtin.oose2024s1.assignment2.bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.events.Event;
+import edu.curtin.oose2024s1.assignment2.o_f.Factory;
 
 public class Test {
     private BicycleShop shop;

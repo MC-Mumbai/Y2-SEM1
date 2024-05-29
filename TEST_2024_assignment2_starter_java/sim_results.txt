@@ -1,2 +1,210 @@
-Total messages: 26
-Total failures: 3
+PURCHASE-ONLINE gaz@jjprj.csy
+Day: 1
+Cash: 16000
+Available Bikes: 49
+Bikes Being Serviced: 0
+Bikes Awaiting Pickup: 1
+DROP-OFF tofzwtc@wixbunr.lel
+DROP-OFF enbti@gwwe.rua
+Day: 2
+Cash: 16200
+Available Bikes: 49
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+PURCHASE-IN-STORE
+Day: 3
+Cash: 17200
+Available Bikes: 48
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+PICK-UP enbti@gwwe.rua
+Day: 4
+Cash: 17200
+Available Bikes: 48
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+Day: 5
+Cash: 21200
+Available Bikes: 44
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+DROP-OFF qmsk@yvemia.aaw
+PURCHASE-IN-STORE
+DELIVERY
+Day: 6
+Cash: 17300
+Available Bikes: 53
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 1
+PURCHASE-ONLINE eoduhhb@glvdx.nhw
+DROP-OFF uzmuaxu@prydkb.nxt
+Day: 7
+Cash: 18400
+Available Bikes: 52
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 2
+PURCHASE-ONLINE jmc@pswl.yxx
+Day: 8
+Cash: 18400
+Available Bikes: 51
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 3
+PURCHASE-ONLINE imuqi@gcxqinz.jdq
+PURCHASE-ONLINE lsmakz@akw.xls
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-ONLINE pibt@zmory.ruo
+DROP-OFF yghejeq@ldjqt.gzz
+PURCHASE-IN-STORE
+Day: 9
+Cash: 24500
+Available Bikes: 45
+Bikes Being Serviced: 5
+Bikes Awaiting Pickup: 6
+Total messages: 22
+Total failures: 0
+PURCHASE-IN-STORE
+PURCHASE-ONLINE qek@bua.les
+Day: 1
+Cash: 17000
+Available Bikes: 48
+Bikes Being Serviced: 0
+Bikes Awaiting Pickup: 1
+PURCHASE-ONLINE opindc@qgeyqof.vin
+PURCHASE-ONLINE mmett@lvwfonb.zai
+PURCHASE-ONLINE idhcgxr@txtkb.vyt
+DELIVERY
+PURCHASE-ONLINE xhung@ijhm.irc
+Day: 2
+Cash: 16000
+Available Bikes: 54
+Bikes Being Serviced: 0
+Bikes Awaiting Pickup: 5
+PICK-UP qek@bua.les
+PURCHASE-IN-STORE
+DROP-OFF awnt@piwifmq.zan
+Day: 3
+Cash: 17100
+Available Bikes: 53
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 4
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-ONLINE tsbksn@ahcy.mur
+Day: 4
+Cash: 21100
+Available Bikes: 49
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 5
+DELIVERY
+PURCHASE-IN-STORE
+DELIVERY
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+Day: 5
+Cash: 17100
+Available Bikes: 63
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 5
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PICK-UP awnt@piwifmq.zan
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+Day: 6
+Cash: 29100
+Available Bikes: 51
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 4
+Day: 7
+Cash: 29100
+Available Bikes: 51
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 4
+PURCHASE-IN-STORE
+Day: 8
+Cash: 29100
+Available Bikes: 50
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 4
+PURCHASE-IN-STORE
+PICK-UP xhung@ijhm.irc
+Day: 9
+Cash: 30100
+Available Bikes: 49
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 3
+PICK-UP tsbksn@ahcy.mur
+PICK-UP awnt@piwifmq.zan
+PICK-UP opindc@qgeyqof.vin
+Day: 10
+Cash: 30100
+Available Bikes: 49
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 1
+PURCHASE-ONLINE kbl@uix.hug
+PURCHASE-IN-STORE
+Day: 11
+Cash: 32100
+Available Bikes: 47
+Bikes Being Serviced: 1
+Bikes Awaiting Pickup: 2
+PURCHASE-IN-STORE
+DROP-OFF mmghxi@xcwkkmh.kwc
+DELIVERY
+PURCHASE-IN-STORE
+Day: 12
+Cash: 29200
+Available Bikes: 55
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+PURCHASE-IN-STORE
+Day: 13
+Cash: 30200
+Available Bikes: 54
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+PURCHASE-ONLINE dhszaz@qehoi.tjh
+Day: 14
+Cash: 31200
+Available Bikes: 53
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 3
+PURCHASE-IN-STORE
+DELIVERY
+PURCHASE-IN-STORE
+PICK-UP mmghxi@xcwkkmh.kwc
+Day: 15
+Cash: 28200
+Available Bikes: 61
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+PURCHASE-IN-STORE
+DROP-OFF dhb@pka.oxk
+DROP-OFF nqpcqz@hatck.rhv
+PURCHASE-ONLINE gzck@zxnhr.wcp
+PURCHASE-ONLINE vjzmujj@wdzx.qtz
+DROP-OFF gaoz@rvbt.reb
+Day: 16
+Cash: 30500
+Available Bikes: 58
+Bikes Being Serviced: 5
+Bikes Awaiting Pickup: 4
+Total messages: 59
+Total failures: 0

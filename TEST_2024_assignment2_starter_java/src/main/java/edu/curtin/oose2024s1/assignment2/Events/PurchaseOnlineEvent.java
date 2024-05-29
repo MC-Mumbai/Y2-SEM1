@@ -1,8 +1,9 @@
-package edu.curtin.oose2024s1.assignment2.Events;
+package edu.curtin.oose2024s1.assignment2.events;
 
-import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
-import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
-import edu.curtin.oose2024s1.assignment2.States.AwaitingPickupState;
+import edu.curtin.oose2024s1.assignment2.states.AwaitingPickupState;
+import edu.curtin.oose2024s1.assignment2.bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.exceptions.NoBikesAvailableException;
 
 public class PurchaseOnlineEvent implements Event {
     private String email;
@@ -13,18 +14,23 @@ public class PurchaseOnlineEvent implements Event {
 
     @Override
     public void execute(BicycleShop shop) {
-        if (shop.getAvailableBikes() > 0) {
-            Bike bike = shop.getAvailableBike();
-            if (bike != null) {
-                bike.setOwnerEmail(email);
-                bike.setState(new AwaitingPickupState());
-                shop.setAvailableBikes(shop.getAvailableBikes() - 1);
-                shop.setBikesAwaitingPickup(shop.getBikesAwaitingPickup() + 1);
-                shop.setCash(shop.getCash() + 1000);
-                System.out.println("Purchase online accepted: Bike is awaiting pickup.");
+        try {
+            if (shop.getAvailableBikes() > 0) {
+                Bike bike = shop.getAvailableBike();
+                if (bike != null) {
+                    bike.setOwnerEmail(email);
+                    bike.setState(new AwaitingPickupState());
+                    shop.setAvailableBikes(shop.getAvailableBikes() - 1);
+                    shop.setBikesAwaitingPickup(shop.getBikesAwaitingPickup() + 1);
+                    shop.setCash(shop.getCash() + 1000);
+                    System.out.println("Purchase online accepted: Bike is awaiting pickup.");
+                }
+            } else {
+                throw new NoBikesAvailableException("FAILURE: No bikes left for online purchase.");
             }
-        } else {
-            System.out.println("FAILURE: No bikes left for online purchase.");
+        } catch (NoBikesAvailableException e) {
+            System.out.println(e.getMessage());
+            shop.notifyObservers(e.getMessage());
         }
     }
 }

@@ -1,6 +1,6 @@
 package edu.curtin.oose2024s1.assignment2;
 
-import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.bikes.BicycleShop;
 
 public class EmployeeSalary {
     private static final long PAY_INTERVAL = 8000; // 7 seconds in milliseconds
