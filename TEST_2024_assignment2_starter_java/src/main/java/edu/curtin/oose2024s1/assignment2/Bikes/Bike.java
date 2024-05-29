@@ -5,7 +5,7 @@ import edu.curtin.oose2024s1.assignment2.states.BikeState;
 public class Bike {
     private BikeState state;
     private String ownerEmail;
-    private long serviceStartTime; // New field to track the start time of servicing
+    private long serviceStartTime; 
 
     public Bike(BikeState state) {
         this.state = state;

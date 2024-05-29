@@ -12,7 +12,6 @@ public class BeingServicedState implements BikeState {
 
         if (elapsedTime >= SERVICE_DURATION) {
             System.out.println("Bike service completed. Changing state to AwaitingPickup.");
-            
             bike.setState(new AwaitingPickupState());
         } else {
             System.out.println("Bike is still being serviced.");

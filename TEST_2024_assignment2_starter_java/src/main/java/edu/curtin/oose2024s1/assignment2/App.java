@@ -20,8 +20,8 @@ public class App {
 
     public App() {
         this.shop = new BicycleShop();
-        this.input = new BikeShopInput();  // Optionally, use a seed for reproducibility
-        this.employeeSalary = new EmployeeSalary(shop); // Initialize EmployeeSalary
+        this.input = new BikeShopInput();
+        this.employeeSalary = new EmployeeSalary(shop); 
     }
 
     public void run() {
@@ -31,7 +31,7 @@ public class App {
 
         try {
             while (System.in.available() == 0) {
-                Thread.sleep(1000); // Simulate 1 day as 1 second
+                Thread.sleep(1000); 
                 daysElapsed++;
                 shop.notifyObservers("Day " + daysElapsed);
                 employeeSalary.checkAndPaySalary();
@@ -71,10 +71,10 @@ public class App {
     }
 
     private void logMessage(String message) {
-        // Use try-with-resources to ensure the PrintWriter is closed after use
+        
         try (PrintWriter writer = new PrintWriter(new FileWriter("sim_results.txt", true))) {
             writer.println(message);
-            writer.flush(); // Ensure the message is actually written to the file
+            writer.flush(); 
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Failed to write message to file", e);
         }
