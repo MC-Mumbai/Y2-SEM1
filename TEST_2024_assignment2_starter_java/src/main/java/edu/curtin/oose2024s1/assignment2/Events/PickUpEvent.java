@@ -21,6 +21,7 @@ public class PickUpEvent implements Event {
                 if (bike.getState() instanceof AwaitingPickupState) {
                     shop.removeBike(bike);
                     shop.setBikesAwaitingPickup(shop.getBikesAwaitingPickup() - 1);
+                    shop.notifyObservers("Pick accepted by:" + email);
                     System.out.println("Pick-up accepted: Bike taken by customer.");
                 } else {
                     throw new BikeNotReadyException();

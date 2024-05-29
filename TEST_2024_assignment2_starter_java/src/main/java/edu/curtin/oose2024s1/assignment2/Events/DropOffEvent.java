@@ -22,7 +22,9 @@ public class DropOffEvent implements Event {
                 shop.addBike(bike);
                 shop.setBikesBeingServiced(shop.getBikesBeingServiced() + 1);
                 shop.setCash(shop.getCash() + 100);
+                shop.notifyObservers("Bike in Service");
                 System.out.println("Drop-off accepted: Bike is being serviced.");
+                
             } else {
                 throw new NotEnoughSpaceForDropOffException();
             }

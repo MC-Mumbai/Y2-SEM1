@@ -208,3 +208,115 @@ Bikes Being Serviced: 5
 Bikes Awaiting Pickup: 4
 Total messages: 59
 Total failures: 0
+DROP-OFF xsd@ata.ziw
+DROP-OFF hlzqg@myxfprg.aqq
+Day: 1
+Cash: 15200
+Available Bikes: 50
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 0
+PICK-UP xsd@ata.ziw
+Day: 2
+Cash: 15200
+Available Bikes: 50
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 0
+PURCHASE-ONLINE ecdk@bww.qxa
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+PICK-UP xsd@ata.ziw
+PURCHASE-ONLINE yxmyk@iqbo.duk
+PURCHASE-IN-STORE
+Day: 3
+Cash: 21200
+Available Bikes: 44
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+Day: 4
+Cash: 21200
+Available Bikes: 44
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+Day: 5
+Cash: 21200
+Available Bikes: 44
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 2
+PICK-UP ecdk@bww.qxa
+Day: 6
+Cash: 21200
+Available Bikes: 44
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+Day: 7
+Cash: 23200
+Available Bikes: 42
+Bikes Being Serviced: 2
+Bikes Awaiting Pickup: 1
+DROP-OFF mjx@fuw.qfs
+Day: 8
+Cash: 22300
+Available Bikes: 42
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 1
+Day: 9
+Cash: 22300
+Available Bikes: 42
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 1
+PURCHASE-ONLINE rmaq@aslgt.eic
+PURCHASE-ONLINE yypnwor@ibi.hvf
+PURCHASE-ONLINE irht@wda.odw
+PURCHASE-ONLINE cqdlurv@wraqo.czw
+PURCHASE-ONLINE gumgag@hrz.rwq
+PICK-UP yxmyk@iqbo.duk
+Day: 10
+Cash: 27300
+Available Bikes: 37
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 5
+PURCHASE-ONLINE kiy@leesyn.ptf
+PURCHASE-ONLINE drufz@jfk.iyt
+Day: 11
+Cash: 29300
+Available Bikes: 35
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 7
+PICK-UP xsd@ata.ziw
+DELIVERY
+Day: 12
+Cash: 24300
+Available Bikes: 45
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 6
+PURCHASE-ONLINE gzx@cyao.qfi
+PURCHASE-ONLINE neccun@xqv.kre
+PURCHASE-ONLINE rno@njrg.moy
+PURCHASE-IN-STORE
+Day: 13
+Cash: 28300
+Available Bikes: 41
+Bikes Being Serviced: 3
+Bikes Awaiting Pickup: 9
+PURCHASE-ONLINE ruej@rzbhwgq.jia
+DROP-OFF twnx@yrlu.civ
+Day: 14
+Cash: 29400
+Available Bikes: 40
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 10
+Day: 15
+Cash: 29400
+Available Bikes: 40
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 10
+Day: 16
+Cash: 28400
+Available Bikes: 40
+Bikes Being Serviced: 4
+Bikes Awaiting Pickup: 10
+Total messages: 30
+Total failures: 0

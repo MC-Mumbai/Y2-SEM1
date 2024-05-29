@@ -23,6 +23,7 @@ public class PurchaseOnlineEvent implements Event {
                     shop.setAvailableBikes(shop.getAvailableBikes() - 1);
                     shop.setBikesAwaitingPickup(shop.getBikesAwaitingPickup() + 1);
                     shop.setCash(shop.getCash() + 1000);
+                    shop.notifyObservers("Bike Sold Online");
                     System.out.println("Purchase online accepted: Bike is awaiting pickup.");
                 }
             } else {

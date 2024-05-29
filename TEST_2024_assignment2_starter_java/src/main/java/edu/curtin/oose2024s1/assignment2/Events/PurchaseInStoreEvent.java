@@ -11,6 +11,8 @@ public class PurchaseInStoreEvent implements Event {
                 shop.setAvailableBikes(shop.getAvailableBikes() - 1);
                 shop.setCash(shop.getCash() + 1000);
                 System.out.println("Purchase in-store accepted: Bike sold.");
+                shop.notifyObservers("Bike Sold Instore");
+                
             } else {
                 throw new NoBikesAvailableException("FAILURE: No bikes left for purchase.");
             }
