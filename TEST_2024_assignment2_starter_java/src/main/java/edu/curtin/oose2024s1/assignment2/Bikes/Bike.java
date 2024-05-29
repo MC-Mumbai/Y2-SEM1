@@ -1,4 +1,6 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Bikes;
+
+import edu.curtin.oose2024s1.assignment2.States.BikeState;
 
 public class Bike {
     private BikeState state;

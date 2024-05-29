@@ -1,4 +1,8 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Events;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.States.AwaitingPickupState;
 
 public class PurchaseOnlineEvent implements Event {
     private String email;

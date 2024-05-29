@@ -7,13 +7,18 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Simulation {
+import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.Events.Event;
+import edu.curtin.oose2024s1.assignment2.O.F.Factory;
+
+public class Test {
     private BicycleShop shop;
     private BikeShopInput input;
     private EmployeeSalary employeeSalary;
-    private static final Logger LOGGER = Logger.getLogger(Simulation.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Test.class.getName());
 
-    public Simulation(BicycleShop shop, BikeShopInput input) {
+    public Test(BicycleShop shop, BikeShopInput input) {
         this.shop = shop;
         this.input = input;
         this.employeeSalary = new EmployeeSalary(shop); // Initialize EmployeeSalary

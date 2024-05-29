@@ -1,4 +1,6 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Events;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
 
 public class PurchaseInStoreEvent implements Event {
     @Override

@@ -1,4 +1,13 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.O.F;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.Events.DeliveryEvent;
+import edu.curtin.oose2024s1.assignment2.Events.DropOffEvent;
+import edu.curtin.oose2024s1.assignment2.Events.Event;
+import edu.curtin.oose2024s1.assignment2.Events.PickUpEvent;
+import edu.curtin.oose2024s1.assignment2.Events.PurchaseInStoreEvent;
+import edu.curtin.oose2024s1.assignment2.Events.PurchaseOnlineEvent;
+import edu.curtin.oose2024s1.assignment2.States.BikeState;
 
 public class Factory 
 {

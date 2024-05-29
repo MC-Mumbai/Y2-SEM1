@@ -1,4 +1,8 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Events;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.O.F.Factory;
+import edu.curtin.oose2024s1.assignment2.States.AvailableState;
 
 public class DeliveryEvent implements Event {
     @Override

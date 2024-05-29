@@ -1,4 +1,6 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.States;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
 
 public class BeingServicedState implements BikeState {
     private static final long SERVICE_DURATION = 2000; // 2 seconds

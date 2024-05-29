@@ -1,4 +1,9 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Events;
+
+import edu.curtin.oose2024s1.assignment2.Bikes.BicycleShop;
+import edu.curtin.oose2024s1.assignment2.Bikes.Bike;
+import edu.curtin.oose2024s1.assignment2.States.AwaitingPickupState;
+import edu.curtin.oose2024s1.assignment2.States.BeingServicedState;
 
 public class PickUpEvent implements Event {
     private String email;

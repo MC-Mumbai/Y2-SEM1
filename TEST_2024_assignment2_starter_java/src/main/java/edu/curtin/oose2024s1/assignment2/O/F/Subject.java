@@ -1,4 +1,4 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.O.F;
 
 public interface Subject {
     void addObserver(Observer observer);

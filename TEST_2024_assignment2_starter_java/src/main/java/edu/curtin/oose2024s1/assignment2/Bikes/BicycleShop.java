@@ -1,7 +1,14 @@
-package edu.curtin.oose2024s1.assignment2;
+package edu.curtin.oose2024s1.assignment2.Bikes;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.curtin.oose2024s1.assignment2.O.F.Factory;
+import edu.curtin.oose2024s1.assignment2.O.F.Observer;
+import edu.curtin.oose2024s1.assignment2.O.F.Subject;
+import edu.curtin.oose2024s1.assignment2.States.AvailableState;
+import edu.curtin.oose2024s1.assignment2.States.AwaitingPickupState;
+import edu.curtin.oose2024s1.assignment2.States.BeingServicedState;
 
 public class BicycleShop implements Subject {
     private int cash;
@@ -33,6 +40,7 @@ public class BicycleShop implements Subject {
 
     public void setCash(int cash) {
         this.cash = cash;
+        notifyObservers("BikeShop Cash Updated: " + cash);
     }
 
     public int getAvailableBikes() {
@@ -41,6 +49,7 @@ public class BicycleShop implements Subject {
 
     public void setAvailableBikes(int availableBikes) {
         this.availableBikes = availableBikes;
+        notifyObservers("Available bikes updated: " + availableBikes);
     }
 
     public int getBikesBeingServiced() {
@@ -49,6 +58,8 @@ public class BicycleShop implements Subject {
 
     public void setBikesBeingServiced(int bikesBeingServiced) {
         this.bikesBeingServiced = bikesBeingServiced;
+        notifyObservers("Bikes being serviced updated: " + bikesBeingServiced);
+
     }
 
     public int getBikesAwaitingPickup() {
@@ -57,15 +68,18 @@ public class BicycleShop implements Subject {
 
     public void setBikesAwaitingPickup(int bikesAwaitingPickup) {
         this.bikesAwaitingPickup = bikesAwaitingPickup;
+        notifyObservers("Bikes Awaiting Pcikup updated: " + bikesAwaitingPickup);
     }
 
     public void addBike(Bike bike) {
         bicycles.add(bike);
+        notifyObservers("Bike added: " + bike);
     }
 
     public void removeBike(Bike bike) {
-        bicycles.remove(bike);
-    }
+    bicycles.remove(bike);
+    notifyObservers("Bike removed: " + bike);
+}
 
     public Bike getAvailableBike() {
         for (Bike bike : bicycles) {
